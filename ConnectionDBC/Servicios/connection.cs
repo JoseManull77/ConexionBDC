@@ -15,20 +15,18 @@ namespace ConnectionDBC.Servicios
             string stringConexionPostgresql = ConfigurationManager.ConnectionStrings["stringConexion"].ConnectionString;
             Console.WriteLine("[INFORMACIÓN-ConexionPostgresqlImplementacion-generarConexionPostgresql] Cadena conexión: " + stringConexionPostgresql);
             NpgsqlConnection conn = null;
-            string estado = "";
+            string estado;
 
             if (!string.IsNullOrWhiteSpace(stringConexionPostgresql)) {
                 try
                 {
                     conn = new NpgsqlConnection(stringConexionPostgresql);
                     conn.Open();
-                    //Se obtiene el estado de conexión para informarlo por consola
                     estado = conn.State.ToString();
+
                     if (estado.Equals("Open"))
                     {
-
-                        Console.WriteLine("[INFORMACIÓN-ConexionPostgresqlImplementacion-generarConexionPostgresql] Estado conexión: " + estado);
-
+                        Console.WriteLine("[INFORMACIÓN-connection-generarConexion] Estado conexión: " + estado);
                     }
                     else
                     {
@@ -37,12 +35,12 @@ namespace ConnectionDBC.Servicios
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine("[ERROR-ConexionPostgresqlImplementacion-generarConexionPostgresql] Error al generar la conexión:" + e);
+                    Console.WriteLine("[ERROR-connection-generarConexion] Error al generar la conexión: " + e);
                     conn = null;
                     return conn;
                 }
-                    return conn;
             }
+            return conn;
         }
     }
 }
