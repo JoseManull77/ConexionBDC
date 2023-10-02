@@ -7,6 +7,6 @@ public class program
     {
         connection con = new connection();
         con.generarConexion();
-
+        Console.WriteLine("Hola Mundo");
     }
 }
