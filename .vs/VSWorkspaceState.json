@@ -3,7 +3,9 @@
     "",
     "\\ConnectionDBC",
     "\\ConnectionDBC\\Controladores",
+    "\\ConnectionDBC\\Dtos",
     "\\ConnectionDBC\\Servicios"
   ],
+  "SelectedNode": "\\ConnectionDBC\\Dtos\\Libro.cs",
   "PreviewInSolutionExplorer": false
 }
